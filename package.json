@@ -30,7 +30,6 @@
     "url": "https://github.com/mavisland/whatsbutton/issues"
   },
   "homepage": "https://github.com/mavisland/whatsbutton#readme",
-  "private": true,
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "cross-env": "^7.0.3",
