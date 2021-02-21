@@ -1,0 +1,111 @@
+## AUTO-DETECT
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched.
+##   This will handle all files NOT defined below.
+* text=auto
+
+## SOURCE CODE
+*.bat      text eol=crlf
+*.coffee   text
+*.css      text
+*.htm      text
+*.html     text
+*.js       text
+*.json     text
+*.jsx      text
+*.less     text
+*.php      text
+*.sass     text
+*.scss     text
+*.sh       text eol=lf
+*.sql      text
+*.xml      text
+*.xhtml    text
+
+## DOCUMENTATION
+*.markdown   text
+*.md         text
+*.mdwn       text
+*.mdown      text
+*.mkd        text
+*.mkdn       text
+*.mdtxt      text
+*.mdtext     text
+*.txt        text
+AUTHORS      text
+CHANGELOG    text
+CHANGES      text
+CONTRIBUTING text
+COPYING      text
+copyright    text
+*COPYRIGHT*  text
+INSTALL      text
+license      text
+LICENSE      text
+NEWS         text
+readme       text
+*README*     text
+TODO         text
+
+## TEMPLATES
+*.dot        text
+*.ejs        text
+*.haml       text
+*.handlebars text
+*.hbs        text
+*.hbt        text
+*.jade       text
+*.latte      text
+*.mustache   text
+*.njk        text
+*.phtml      text
+*.tmpl       text
+*.tpl        text
+*.twig       text
+
+## CONFIGS
+*.bowerrc      text
+*.cnf          text
+*.conf         text
+*.config       text
+.browserslistrc    text
+.editorconfig  text
+.gitattributes text
+.gitconfig     text
+.htaccess      text
+*.npmignore    text
+*.yaml         text
+*.yml          text
+browserslist   text
+Makefile       text
+makefile       text
+
+## GRAPHICS
+*.ai   binary
+*.bmp  binary
+*.eps  binary
+*.gif  binary
+*.ico  binary
+*.jng  binary
+*.jp2  binary
+*.jpg  binary
+*.jpeg binary
+*.jpx  binary
+*.jxr  binary
+*.pdf  binary
+*.png  binary
+*.psb  binary
+*.psd  binary
+*.svg  text
+*.svgz binary
+*.tif  binary
+*.tiff binary
+*.wbmp binary
+*.webp binary
+
+## FONTS
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
