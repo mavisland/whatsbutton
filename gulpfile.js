@@ -40,7 +40,7 @@ gulp.task(
   "scripts",
   gulp.series(function (done) {
     gulp
-      .src("src/js/jquery.whatsbutton.js")
+      .src("js/jquery.whatsbutton.js")
       .pipe(plumber())
       .pipe(gulp.dest("dist/js/"))
       .pipe(
@@ -71,7 +71,7 @@ gulp.task(
   "styles",
   gulp.series(function (done) {
     gulp
-      .src("src/scss/whatsbutton.scss")
+      .src("scss/whatsbutton.scss")
       .pipe(plumber())
       .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.init()))
       .pipe(
@@ -123,8 +123,8 @@ gulp.task("build", gulp.parallel(["styles", "scripts"]));
  * Watch all file changes
  */
 gulp.task("watch", function () {
-  gulp.watch("src/js/*.js", gulp.series("scripts"));
-  gulp.watch("src/scss/*.scss", gulp.series("styles"));
+  gulp.watch("js/*.js", gulp.series("scripts"));
+  gulp.watch("scss/*.scss", gulp.series("styles"));
 });
 
 // Default

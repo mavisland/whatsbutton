@@ -1,6 +1,6 @@
 {
   "name": "whatsbutton",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "WhatsApp Floating Button",
   "main": "gulpfile.js",
   "scripts": {
@@ -51,5 +51,10 @@
   ],
   "dependencies": {
     "jquery": "1.11.2"
-  }
+  },
+  "files": [
+    "dist/{css,js}/*.{css,js,map}",
+    "js/*.js",
+    "scss/*.scss"
+  ]
 }
