@@ -50,7 +50,7 @@
     "> 5%"
   ],
   "dependencies": {
-    "jquery": "1.11.2"
+    "jquery": "3.5.0"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
