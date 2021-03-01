@@ -1,3 +1,4 @@
+/*! whatbutton v1.0.0 | MIT License | github.com/mavisland/whatsbutton */
 .whatsbutton {
   display: block;
   font-size: 14px;
@@ -29,6 +30,12 @@
   bottom: 0;
   right: 0;
   width: 56px;
+  -webkit-animation-name: toggleButton;
+  animation-name: toggleButton;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .whatsbutton .wb-toggle-button:before, .whatsbutton .wb-toggle-button:after {
@@ -115,6 +122,10 @@
   height: 56px;
   line-height: 22px;
   padding: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -134,6 +145,7 @@
 }
 
 .whatsbutton .wb-user-body {
+  color: #fff !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,6 +154,11 @@
   -ms-flex-flow: column wrap;
   flex-flow: column wrap;
   padding-left: 10px;
+}
+
+.whatsbutton .wb-user-name,
+.whatsbutton .wb-user-status {
+  color: currentColor !important;
 }
 
 .whatsbutton .wb-user-status {
@@ -158,6 +175,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .whatsbutton .wb-message-list-item {
@@ -180,6 +201,10 @@
   position: absolute;
   left: -14px;
   top: 0;
+}
+
+.whatsbutton .wb-message-list-item + .wb-message-list-item {
+  margin-top: 1rem;
 }
 
 .whatsbutton .wb-chat-footer {
@@ -205,6 +230,7 @@
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 38px;
+  margin: 0;
   padding: 8px 16px;
 }
 
@@ -258,21 +284,51 @@
   left: 0;
 }
 
-.whatsbutton.is-active .wb-toggle-button:before {
+.whatsbutton.is-active .wb-toggle-button:before, .whatsbutton.is-open .wb-toggle-button:before {
   opacity: 0;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.whatsbutton.is-active .wb-toggle-button:after {
+.whatsbutton.is-active .wb-toggle-button:after, .whatsbutton.is-open .wb-toggle-button:after {
   opacity: 1;
   -webkit-transform: rotate(0);
   transform: rotate(0);
 }
 
-.whatsbutton.is-active .wb-chat {
+.whatsbutton.is-active .wb-chat, .whatsbutton.is-open .wb-chat {
   opacity: 1;
   pointer-events: all;
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+
+@-webkit-keyframes toggleButton {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg) scale(0.1);
+    transform: rotate(90deg) scale(0.1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes toggleButton {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg) scale(0.1);
+    transform: rotate(90deg) scale(0.1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+  }
 }

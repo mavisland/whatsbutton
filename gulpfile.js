@@ -5,14 +5,11 @@ var gulp = require("gulp");
 var autoprefixer = require("autoprefixer");
 var cleanCSS = require("gulp-clean-css");
 var del = require("del");
-var fs = require("fs");
-var gulpif = require("gulp-if");
 var pkg = require("./package.json");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
-var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 
 /**
@@ -43,13 +40,7 @@ gulp.task(
       .src("js/jquery.whatsbutton.js")
       .pipe(plumber())
       .pipe(gulp.dest("dist/js/"))
-      .pipe(
-        uglify({
-          output: {
-            comments: false,
-          },
-        })
-      )
+      .pipe(uglify())
       .pipe(
         rename({
           suffix: ".min",
@@ -73,7 +64,6 @@ gulp.task(
     gulp
       .src("scss/whatsbutton.scss")
       .pipe(plumber())
-      .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.init()))
       .pipe(
         sass({
           outputStyle: "expanded",
@@ -88,21 +78,12 @@ gulp.task(
         ])
       )
       .pipe(gulp.dest("dist/css/"))
-      .pipe(
-        cleanCSS({
-          level: {
-            1: {
-              specialComments: 0,
-            },
-          },
-        })
-      )
+      .pipe(cleanCSS())
       .pipe(
         rename({
           suffix: ".min",
         })
       )
-      .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.write(".")))
       .pipe(gulp.dest("dist/css/"));
 
     // Signal completion
