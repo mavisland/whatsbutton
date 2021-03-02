@@ -5,12 +5,16 @@ var gulp = require("gulp");
 var autoprefixer = require("autoprefixer");
 var cleanCSS = require("gulp-clean-css");
 var del = require("del");
+var header = require("gulp-header");
 var pkg = require("./package.json");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var uglify = require("gulp-uglify");
+
+// File Banner
+var banner = "/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> License | <%= pkg.homepage %> */\n";
 
 /**
  * Task: 'clean'
@@ -39,6 +43,7 @@ gulp.task(
     gulp
       .src("js/jquery.whatsbutton.js")
       .pipe(plumber())
+      .pipe(header(banner, { pkg: pkg }))
       .pipe(gulp.dest("dist/js/"))
       .pipe(uglify())
       .pipe(
@@ -46,6 +51,7 @@ gulp.task(
           suffix: ".min",
         })
       )
+      .pipe(header(banner, { pkg: pkg }))
       .pipe(gulp.dest("dist/js/"));
 
     // Signal completion
@@ -77,6 +83,7 @@ gulp.task(
           }),
         ])
       )
+      .pipe(header(banner, { pkg: pkg }))
       .pipe(gulp.dest("dist/css/"))
       .pipe(cleanCSS())
       .pipe(

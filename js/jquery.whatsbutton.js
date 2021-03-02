@@ -1,4 +1,3 @@
-/*! whatbutton v1.0.0 | MIT License | github.com/mavisland/whatsbutton */
 (function ($, window, document) {
   var WhatsButton = function (element, options) {
     this.elm = element;
