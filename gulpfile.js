@@ -10,7 +10,7 @@ var pkg = require("./package.json");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("node-sass"));
 var uglify = require("gulp-uglify");
 
 // File Banner
