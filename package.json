@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/mavisland/whatsbutton",
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^10.4.2",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
